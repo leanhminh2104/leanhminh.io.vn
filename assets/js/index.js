@@ -92,10 +92,11 @@
   }
 
   function playLoop(showToast = true) {
-    fetch('./assets/music/api.php')
+    fetch(`${CDN_ASSETS}/music/tracks.json`)
       .then(res => res.json())
-      .then(data => {
-        if (data.error || !data.musicUrl) throw new Error(data.message || 'Invalid music data');
+      .then(tracks => {
+        const data = tracks[Math.floor(Math.random() * tracks.length)];
+        if (!data || !data.musicUrl) throw new Error('Invalid music data');
         if (currentAudio) currentAudio.pause();
 
         currentTrack = data;
