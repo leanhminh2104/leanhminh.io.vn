@@ -1,4 +1,6 @@
 !function (window) {
+  const CDN_ASSETS = 'https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets';
+
   // Cookie helpers
   function setCookie(name, value, days) {
     const expires = new Date(Date.now() + 864e5 * days).toUTCString();
@@ -155,10 +157,10 @@
         <section class="td-welcome">
           <div class="medias">
             <video class="pc item_video" autoplay loop muted playsinline>
-              <source src="./assets/video/pc.mp4?v=${randomVersion()}" type="video/mp4">
+              <source src="${CDN_ASSETS}/video/pc.mp4?v=${randomVersion()}" type="video/mp4">
             </video>
             <video class="mobile item_video" autoplay loop muted playsinline>
-              <source src="./assets/video/mb.mp4?v=${randomVersion()}" type="video/mp4">
+              <source src="${CDN_ASSETS}/video/mb.mp4?v=${randomVersion()}" type="video/mp4">
             </video>
             <div class="date"></div>
           </div>
@@ -449,9 +451,9 @@
   }
 
   function loadLocalAssets() {
-    const imageSources = Array.from(document.querySelectorAll('img[src^="./assets/img/"]'))
+    const imageSources = Array.from(document.querySelectorAll('img'))
       .map(img => img.getAttribute('src'))
-      .filter(Boolean);
+      .filter(src => src && (src.includes('/assets/img/') || src.startsWith('./assets/img/')));
     const videoSources = Array.from(document.querySelectorAll('video source'))
       .map(source => source.getAttribute('src'))
       .filter(Boolean);
