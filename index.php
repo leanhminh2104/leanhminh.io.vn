@@ -461,6 +461,7 @@
     <script src="./assets/js/libs/fuiToast.min.js"></script>
     <script src="./assets/js/libs/fancybox.umd.js"></script>
     <script src="./assets/js/addons/cursor-magic.js?v=2"></script>
+    <script src="./assets/js/addons/pixel-pet.js?v=1"></script>
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"
         data-pace-options='{"restartOnRequestAfter":false,"eventLag":false}'></script>
     <script src="./assets/js/index.js?lamdev=126"></script>
