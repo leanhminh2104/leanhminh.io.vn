@@ -19,17 +19,17 @@
     <meta property="og:title" content="Lê Anh Minh | Profile Home">
     <meta property="og:description" content="Profile cá nhân của Lê Văn Anh Minh - developer yêu thích backend, API, automation và web.">
     <meta property="og:url" content="https://leanhminh.io.vn/">
-    <meta property="og:image" content="./assets/img/lamdev.jpg">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/img/lamdev.jpg">
     <meta property="og:image:alt" content="Lê Văn Anh Minh Profile">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lê Anh Minh | Profile Home">
     <meta name="twitter:description" content="Profile cá nhân của Lê Văn Anh Minh - developer yêu thích backend, API, automation và web.">
-    <meta name="twitter:image" content="./assets/img/lamdev.jpg">
+    <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/img/lamdev.jpg">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css?v=3.8">
-    <link rel="stylesheet" href="./assets/css/fuiToast.min.css">
-    <link rel="stylesheet" href="./assets/css/fancybox.css">
-    <link rel="stylesheet" href="./assets/css/index.css?v=3.3">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/css/style.css?v=3.8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/css/fuiToast.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/css/fancybox.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/css/index.css?v=3.3">
 </head>
 
 <body>
@@ -107,12 +107,12 @@
             <div class="flex w-full flex-col gap-y-10 md:w-4/5 lg:w-5/6">
                 <section class="animate flex flex-col items-center gap-y-7 show">
                     <div class="relative">
-                        <img src="./assets/img/lamdev.jpg" alt="profile" class="h-30 w-auto rounded-full border p-1">
-                        <img class="crown3" src="./assets/img/mong-vuot-rong.png">
+                        <img src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/img/lamdev.jpg" alt="profile" class="h-30 w-auto rounded-full border p-1">
+                        <img class="crown3" src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/img/mong-vuot-rong.png">
                     </div>
                     <div class="flex flex-col items-center gap-y-4">
                         <h1 class="text-3xl font-bold flex items-center"> Lê Văn Anh Minh<img class="blue-tick ml-2"
-                                src="./assets/img/icon/tick.png"></h1>
+                                src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/img/icon/tick.png"></h1>
                         <p>Lời nói gió bay, hứa càng hay chia tay <span
                                 class="bg-primary-foreground rounded text-transparent hover:text-inherit transition-colors cursor-pointer">càng
                                 thấm 😞.</span></p>
@@ -176,11 +176,11 @@
                                 <p>Trang đếm ngày yêu với giao diện dễ thương.</p>
                             </div>
                         </a>
-                        <a class="profile-card" href="/assets/music/api.php" target="_blank" rel="noopener noreferrer">
+                        <a class="profile-card" href="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/music/tracks.json" target="_blank" rel="noopener noreferrer">
                             <i class="ri-music-2-line"></i>
                             <div>
-                                <h3>Local Music API</h3>
-                                <p>API nhạc local random bài, không phụ thuộc API ngoài.</p>
+                                <h3>Music Data</h3>
+                                <p>Danh sách nhạc random chạy trực tiếp từ CDN.</p>
                             </div>
                         </a>
                         <a class="profile-card" href="/info/">
@@ -211,7 +211,7 @@
                                     <div
                                         class="absolute -inset-0 z-10 rounded-lg border border-border bg-muted opacity-0 transition-all group-hover:opacity-50">
                                     </div>
-                                    <img src="./assets/img/icon/icon-mbbank.jpg"
+                                    <img src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/img/icon/icon-mbbank.jpg"
                                         class="z-20 h-10 w-10 rounded-lg bg-muted p-2" alt="MBBANK">
                                     <div class="z-20 flex flex-col">
                                         <div class="font-medium">LE VAN ANH MINH <i data-ws-copy="LE VAN ANH MINH"
@@ -228,7 +228,7 @@
                                     <div
                                         class="absolute -inset-0 z-10 rounded-lg border border-border bg-muted opacity-0 transition-all group-hover:opacity-50">
                                     </div>
-                                    <img src="./assets/img/icon/icon-acb-v2.png"
+                                    <img src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/img/icon/icon-acb-v2.png"
                                         class="z-20 h-10 w-10 rounded-lg bg-muted p-2" alt="BIDV">
                                     <div class="z-20 flex flex-col">
                                         <div class="font-medium">LE VAN ANH MINH <i data-ws-copy="LE VAN ANH MINH"
@@ -457,13 +457,13 @@
             </div>
         </main>
     </div>
-    <script src="./assets/js/libs/jquery-3.7.1.min.js"></script>
-    <script src="./assets/js/libs/fuiToast.min.js"></script>
-    <script src="./assets/js/libs/fancybox.umd.js"></script>
-    <script src="./assets/js/addons/cursor-magic.js?v=2"></script>
+    <script src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/js/libs/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/js/libs/fuiToast.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/js/libs/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/js/addons/cursor-magic.js?v=2"></script>
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"
         data-pace-options='{"restartOnRequestAfter":false,"eventLag":false}'></script>
-    <script src="./assets/js/index.js?lamdev=126"></script>
+    <script src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/js/index.js?lamdev=126"></script>
 </body>
 
 </html>

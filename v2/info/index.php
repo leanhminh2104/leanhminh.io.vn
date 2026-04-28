@@ -18,15 +18,15 @@
     <meta property="og:title" content="Lê Anh Minh | Info">
     <meta property="og:description" content="Tất cả liên kết mạng xã hội và thông tin liên hệ của Lê Văn Anh Minh.">
     <meta property="og:url" content="https://leanhminh.io.vn/info/">
-    <meta property="og:image" content="../assets/img/lamdev.jpg">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/img/lamdev.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lê Anh Minh | Info">
     <meta name="twitter:description" content="Tất cả liên kết mạng xã hội và thông tin liên hệ của Lê Văn Anh Minh.">
-    <meta name="twitter:image" content="../assets/img/lamdev.jpg">
+    <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/img/lamdev.jpg">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css?v=3.8">
-    <link rel="stylesheet" href="../assets/css/fuiToast.min.css">
-    <link rel="stylesheet" href="../assets/css/index.css?v=3.3">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/css/style.css?v=3.8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/css/fuiToast.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/css/index.css?v=3.3">
 </head>
 
 <body>
@@ -52,11 +52,11 @@
             <div class="flex w-full flex-col gap-y-10 md:w-4/5 lg:w-5/6">
                 <section class="animate flex flex-col items-center gap-y-7 show">
                     <div class="relative">
-                        <img src="../assets/img/lamdev.jpg" alt="Lê Anh Minh" class="h-30 w-auto rounded-full border p-1">
-                        <img class="crown3" src="../assets/img/mong-vuot-rong.png" alt="">
+                        <img src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/img/lamdev.jpg" alt="Lê Anh Minh" class="h-30 w-auto rounded-full border p-1">
+                        <img class="crown3" src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/img/mong-vuot-rong.png" alt="">
                     </div>
                     <div class="flex flex-col items-center gap-y-4 text-center">
-                        <h1 class="text-3xl font-bold flex items-center">Lê Văn Anh Minh<img class="blue-tick ml-2" src="../assets/img/icon/tick.png" alt="tick"></h1>
+                        <h1 class="text-3xl font-bold flex items-center">Lê Văn Anh Minh<img class="blue-tick ml-2" src="https://cdn.jsdelivr.net/gh/leanhminh2104/leanhminh.io.vn@main/assets/img/icon/tick.png" alt="tick"></h1>
                         <p class="text-muted-foreground">All social links & contact info</p>
                     </div>
                 </section>
