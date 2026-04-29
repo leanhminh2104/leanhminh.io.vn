@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>LeAnhMinh - Home</title>
-    <link rel="shortcut icon" href="https://i.ibb.co/rGMn65d.webp" type="image/x-icon">
-    <meta name="description" content="Profile cá nhân của Lê Văn Anh Minh - developer yêu thích backend, API, automation và web.">
+    <link rel="shortcut icon" href="./assets/img/lamdev.jpg" type="image/x-icon">
+    <meta name="description"
+        content="Profile cá nhân của Lê Văn Anh Minh - developer yêu thích backend, API, automation và web.">
     <meta name="keywords"
         content="leanhminh,web le anh minh,le anh minh,lamdev,levananhminh,le van anh minh,leanhminh home,profile leanhminh,developer profile">
     <meta name="author" content="LAMDev">
@@ -17,19 +18,21 @@
     <meta property="og:locale" content="vi_VN">
     <meta property="og:site_name" content="LeAnhMinh Home">
     <meta property="og:title" content="Lê Anh Minh | Profile Home">
-    <meta property="og:description" content="Profile cá nhân của Lê Văn Anh Minh - developer yêu thích backend, API, automation và web.">
+    <meta property="og:description"
+        content="Profile cá nhân của Lê Văn Anh Minh - developer yêu thích backend, API, automation và web.">
     <meta property="og:url" content="https://leanhminh.io.vn/">
     <meta property="og:image" content="./assets/img/lamdev.jpg">
     <meta property="og:image:alt" content="Lê Văn Anh Minh Profile">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lê Anh Minh | Profile Home">
-    <meta name="twitter:description" content="Profile cá nhân của Lê Văn Anh Minh - developer yêu thích backend, API, automation và web.">
+    <meta name="twitter:description"
+        content="Profile cá nhân của Lê Văn Anh Minh - developer yêu thích backend, API, automation và web.">
     <meta name="twitter:image" content="./assets/img/lamdev.jpg">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css?v=3.8">
     <link rel="stylesheet" href="./assets/css/fuiToast.min.css">
     <link rel="stylesheet" href="./assets/css/fancybox.css">
-    <link rel="stylesheet" href="./assets/css/index.css?v=3.3">
+    <link rel="stylesheet" href="./assets/css/index.css?v=3.9">
 </head>
 
 <body>
@@ -89,7 +92,8 @@
                         </h1>
                         <div class="flex gap-x-4 sm:gap-x-6">
                             <div class="flex gap-x-4 transition-all group-[.not-top]:me-1.5 group-[.not-top]:gap-x-2">
-                                <button class="mini-music-btn group/dark rounded-md p-2 transition-all sm:group-[.not-top]:rounded-xl"
+                                <button
+                                    class="mini-music-btn group/dark rounded-md p-2 transition-all sm:group-[.not-top]:rounded-xl"
                                     aria-label="Phát nhạc">
                                     <i class="ri-play-circle-line"></i>
                                 </button>
@@ -169,7 +173,8 @@
                         <h2>Projects</h2>
                     </div>
                     <div class="grid flex-1 grid-cols-1 gap-3 sm:grid-cols-2">
-                        <a class="profile-card" href="https://love.leanhminh.io.vn" target="_blank" rel="noopener noreferrer">
+                        <a class="profile-card" href="https://love.leanhminh.io.vn" target="_blank"
+                            rel="noopener noreferrer">
                             <i class="ri-heart-3-line"></i>
                             <div>
                                 <h3>Love Counter</h3>
@@ -460,11 +465,24 @@
     <script src="./assets/js/libs/jquery-3.7.1.min.js"></script>
     <script src="./assets/js/libs/fuiToast.min.js"></script>
     <script src="./assets/js/libs/fancybox.umd.js"></script>
-    <script src="./assets/js/addons/cursor-magic.js?v=2"></script>
-    <script src="./assets/js/addons/pixel-pet.js?v=1"></script>
+    <script src="./assets/js/addons/cursor-magic.js?v=4"></script>
+    <script src="./assets/js/addons/pixel-pet.js?v=3"></script>
+    <script src="https://louisabraham.github.io/nekojs/neko.js"></script>
+    <script>
+        const neko = createNeko({
+            speed: 24,
+            fps: 120,
+            behaviorMode: 0,
+            idleThreshold: 6,
+            allowBehaviorChange: true,
+            startX: 30,
+            startY: window.innerHeight - 80
+        });
+        neko.start();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"
         data-pace-options='{"restartOnRequestAfter":false,"eventLag":false}'></script>
-    <script src="./assets/js/index.js?lamdev=126"></script>
+    <script src="./assets/js/index.js?lamdev=132"></script>
 </body>
 
 </html>

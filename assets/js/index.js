@@ -84,6 +84,107 @@
   // Music fetch & play
   let currentAudio = null;
   let currentTrack = null;
+  let musicProgressTimer = null;
+  let nowPlayingCollapseTimer = null;
+
+  function ensureNowPlayingCard() {
+    if ($('#now-playing-card').length) return;
+
+    $('body').append(`
+      <div id="now-playing-card" class="now-playing-card collapsed">
+        <button class="now-playing-icon now-playing-open" aria-label="Mở trình phát nhạc"><i class="ri-music-2-line"></i></button>
+        <div class="now-playing-panel">
+          <div class="now-playing-main">
+            <div class="now-playing-title">Chưa phát nhạc</div>
+            <div class="now-playing-artist">Ấn play để bắt đầu</div>
+            <div class="now-playing-progress"><span></span></div>
+          </div>
+          <button class="now-playing-btn now-playing-toggle" aria-label="Tạm dừng/phát"><i class="ri-play-line"></i></button>
+          <button class="now-playing-btn now-playing-next" aria-label="Bài tiếp theo"><i class="ri-skip-forward-line"></i></button>
+        </div>
+      </div>
+    `);
+  }
+
+  function showNowPlayingCard() {
+    ensureNowPlayingCard();
+    $('#now-playing-card').addClass('show').removeClass('expanded').addClass('collapsed');
+  }
+
+  function scheduleNowPlayingCollapse() {
+    clearTimeout(nowPlayingCollapseTimer);
+    nowPlayingCollapseTimer = setTimeout(() => {
+      if ($('#now-playing-card:hover').length) {
+        scheduleNowPlayingCollapse();
+        return;
+      }
+      collapseNowPlayingCard();
+    }, 3000);
+  }
+
+  function expandNowPlayingCard() {
+    if (!currentAudio) return;
+    clearTimeout(nowPlayingCollapseTimer);
+    $('#now-playing-card').addClass('expanded').removeClass('collapsed');
+    scheduleNowPlayingCollapse();
+  }
+
+  function collapseNowPlayingCard() {
+    $('#now-playing-card').removeClass('expanded').addClass('collapsed');
+  }
+
+  function updateNowPlaying(data) {
+    showNowPlayingCard();
+    $('.now-playing-title').text(data.titleTracks || 'Unknown track');
+    $('.now-playing-artist').text(data.artist || 'Unknown artist');
+  }
+
+  function setNowPlayingState(isPlaying) {
+    $('.now-playing-toggle i')
+      .toggleClass('ri-play-line', !isPlaying)
+      .toggleClass('ri-pause-line', isPlaying);
+    $('#now-playing-card').toggleClass('playing', isPlaying);
+  }
+
+  function startMusicProgress() {
+    clearInterval(musicProgressTimer);
+    musicProgressTimer = setInterval(() => {
+      if (!currentAudio || !Number.isFinite(currentAudio.duration)) return;
+      const progress = Math.min(100, (currentAudio.currentTime / currentAudio.duration) * 100);
+      $('.now-playing-progress span').css('width', `${progress}%`);
+    }, 350);
+  }
+
+  function triggerEasterEgg(keyword) {
+    const words = keyword === 'lamdev' ? ['LAMDEV', '✨', '🚀', '💙', '✦'] : ['MINH', '✨', '💖', '✦', '🌸'];
+    const burst = $('<div class="egg-burst"></div>').appendTo('body');
+
+    for (let i = 0; i < 42; i += 1) {
+      const piece = $('<span class="egg-piece"></span>')
+        .text(words[Math.floor(Math.random() * words.length)])
+        .css({
+          left: `${Math.random() * 100}vw`,
+          color: ['#89f7ff', '#ff9dc7', '#ffe49c', '#ffffff'][Math.floor(Math.random() * 4)],
+          animationDelay: `${Math.random() * 0.45}s`,
+          fontSize: `${0.9 + Math.random() * 1.15}rem`
+        })
+        .appendTo('body');
+      setTimeout(() => piece.remove(), 2800);
+    }
+
+    FuiToast.success(keyword === 'lamdev' ? 'LAMDev mode activated!' : 'Hello Minh!');
+    setTimeout(() => burst.remove(), 1900);
+  }
+
+  let eggBuffer = '';
+  $(document).on('keydown', e => {
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key.length !== 1) return;
+
+    eggBuffer = `${eggBuffer}${e.key.toLowerCase()}`.slice(-12);
+    if (eggBuffer.endsWith('minh')) triggerEasterEgg('minh');
+    if (eggBuffer.endsWith('lamdev')) triggerEasterEgg('lamdev');
+  });
 
   function setMusicIcon(isPlaying) {
     $('.mini-music-btn i')
@@ -101,10 +202,15 @@
 
         currentTrack = data;
         currentAudio = new Audio(data.musicUrl);
+        updateNowPlaying(data);
+        $('.now-playing-progress span').css('width', '0%');
         currentAudio.addEventListener('ended', () => playLoop(false));
 
         const playPromise = currentAudio.play().then(() => {
           setMusicIcon(true);
+          setNowPlayingState(true);
+          startMusicProgress();
+          collapseNowPlayingCard();
           return data;
         });
 
@@ -124,6 +230,8 @@
       })
       .catch(() => {
         setMusicIcon(false);
+        setNowPlayingState(false);
+        $('#now-playing-card').removeClass('show expanded').addClass('collapsed');
         FuiToast.error('Có lỗi khi lấy nhạc từ API!');
       });
   }
@@ -139,6 +247,8 @@
       currentAudio.play()
         .then(() => {
           setMusicIcon(true);
+          setNowPlayingState(true);
+          startMusicProgress();
           FuiToast.success(currentTrack ? `${currentTrack.titleTracks} - ${currentTrack.artist}` : 'Đang phát nhạc');
         })
         .catch(() => FuiToast.error('Không thể phát nhạc ngay lúc này.'));
@@ -147,7 +257,36 @@
 
     currentAudio.pause();
     setMusicIcon(false);
+    setNowPlayingState(false);
     FuiToast.success('Đã tạm dừng nhạc.');
+  });
+
+  $('body').on('click', '.now-playing-toggle', () => {
+    if (!currentAudio) {
+      playLoop(true);
+      return;
+    }
+
+    if (currentAudio.paused) {
+      currentAudio.play().then(() => {
+        setMusicIcon(true);
+        setNowPlayingState(true);
+        startMusicProgress();
+      });
+      return;
+    }
+
+    currentAudio.pause();
+    setMusicIcon(false);
+    setNowPlayingState(false);
+  });
+
+  $('body').on('click mouseenter', '.now-playing-open', expandNowPlayingCard);
+  $('body').on('mouseenter', '#now-playing-card', () => clearTimeout(nowPlayingCollapseTimer));
+  $('body').on('mouseleave', '#now-playing-card.expanded', scheduleNowPlayingCollapse);
+  $('body').on('click', '.now-playing-next', () => {
+    expandNowPlayingCard();
+    playLoop(true);
   });
 
   // Append lock screen & toast container
